@@ -1,8 +1,8 @@
 class Postpolish < Formula
   desc "An offline text reviewer for public posts, powered by small language models (SLMs)."
   homepage "https://github.com/kevinarian30/homebrew-postpolish"
-  url "https://github.com/kevinarian30/homebrew-postpolish/releases/download/v1.0.4/post-polish-brew-v1.0.4.tar.gz"
-  sha256 "273d221ff86e660d21fc6bdb18ddb529ccc8bcf52e8d7eaebde0238880ef716f"
+  url "https://github.com/kevinarian30/homebrew-postpolish/releases/download/v1.0.5/post-polish-brew-v1.0.5.tar.gz"
+  sha256 "3062fae91ce4c85dc86953e38e42da83e8ab32f526f26eb4318bc6147619ec53"
   license "MIT"
 
   depends_on :macos
