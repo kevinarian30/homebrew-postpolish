@@ -1,8 +1,8 @@
 class PostPolish < Formula
-  desc "Offline grammar checker for English/Indonesian bilingual text"
+  desc "An offline text reviewer for public posts, powered by small language models (SLMs)."
   homepage "https://github.com/kevinarian30/homebrew-postpolish"
-  url "https://github.com/kevinarian30/homebrew-postpolish/releases/download/v<VERSION>/post-polish-brew-v<VERSION>.tar.gz"
-  sha256 "<SHA256>"
+  url "https://github.com/kevinarian30/homebrew-postpolish/releases/download/vbuild-20260315-596dad6/post-polish-brew-vbuild-20260315-596dad6.tar.gz"
+  sha256 "7e5acbb7d0b9475ed51177d97be9243275682b1456fbd2f73e613a2aeab275bd"
   license "MIT"
 
   depends_on :macos
@@ -14,21 +14,14 @@ class PostPolish < Formula
   end
 
   def post_install
-    # Create mutable data directories
     (var/"post-polish/model").mkpath
     (var/"post-polish/config").mkpath
     (var/"post-polish/memories").mkpath
     (var/"post-polish/logs").mkpath
     (var/"post-polish/run").mkpath
-
-    # Initialize seed memory working copy
     cp share/"post-polish/seed-memory.json", var/"post-polish/memories/seed-memory.json"
-
-    # Initialize settings.json if not present
     settings = var/"post-polish/config/settings.json"
-    unless settings.exist?
-      settings.write("{}")
-    end
+    settings.write("{}") unless settings.exist?
   end
 
   def caveats
@@ -40,9 +33,6 @@ class PostPolish < Formula
 
       Start the app:
         postpolish start
-
-      Or use brew services:
-        brew services start post-polish
 
       Models are stored in: #{var}/post-polish/model/
     EOS
